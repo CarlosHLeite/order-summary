@@ -1,0 +1,249 @@
+:root {
+  /* Font-Family */
+  font-family: "Red Hat Display", sans-serif;
+
+  /* Colors */
+  --clr-pale-blue: 225, 100%, 94%;
+  --clr-bright-blue: 245, 75%, 52%;
+  --clr-very-pale-blue: 225, 100%, 98%;
+  --clr-desaturated-blue: 224, 23%, 55%;
+  --clr-dark-blue: 223, 47%, 23%;
+  --clr-white: 0, 0%, 100%;
+
+  /* Font-Sizes */
+  --fs-600: 1rem;
+
+  /* Font-Weights */
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  /* Layout */
+  --mb: 20.4375rem;
+  --dsk: 90rem;
+
+  --bx-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: hsl(var(--clr-pale-blue));
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  height: calc(100vh - 5vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(/assets/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 12.125rem;
+}
+
+.card {
+  width: 96%;
+  max-width: 28.125rem;
+  background-color: hsl(var(--clr-white));
+  margin-inline: auto;
+  box-shadow: var(--bx-shadow);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  border-radius: 1.25rem 1.25rem 0rem 0rem;
+}
+
+.card > h1 {
+  color: hsl(var(--clr-dark-blue));
+  font-size: 1.375rem;
+  font-weight: 900;
+  line-height: normal;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.card > p {
+  color: hsl(var(--clr-desaturated-blue));
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem; /* 166.667% */
+  padding-inline: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.plan-card {
+  width: 90%;
+  max-width: 22.125rem;
+  height: 5.0625rem;
+  background-color: hsla(228, 100%, 99%, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.6875rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.left-section > img {
+  margin-right: 1.25rem;
+}
+
+.plan-content > h2 {
+  color: hsla(223, 46%, 23%, 1);
+  font-size: 0.875rem;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.plan-content > p {
+  color: hsla(224, 23%, 55%, 1);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.plan-card > button {
+  border: none;
+  background-color: transparent;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  color: hsla(var(--clr-bright-blue));
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 22.125rem;
+}
+
+.cta > button {
+  padding: 0.94rem 0;
+  margin-bottom: 1rem;
+}
+
+.proceed {
+  border: none;
+  border-radius: 0.6875rem;
+  background: #382ae1;
+  box-shadow: 0px 20px 20px 0px rgba(56, 42, 225, 0.19);
+  color: hsl(var(--clr-white));
+  font-weight: 900;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.proceed:hover {
+  background-color: hsla(245, 83%, 68%, 1);
+}
+
+.cancel {
+  border: none;
+  background-color: transparent;
+  font-size: 0.9375rem;
+  font-weight: 900;
+  color: hsla(224, 23%, 55%, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.cancel:hover {
+  color: hsla(223, 47%, 23%, 1);
+}
+
+.attribution {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 0.7rem;
+  text-align: center;
+  padding-bottom: 0.6rem;
+}
+
+.attribution a {
+  margin-left: 4px;
+}
+
+@media (min-width: 35rem) {
+  .main {
+    background-image: url(/assets/images/pattern-background-desktop.svg);
+    background-size: 100% 27.3125rem;
+  }
+
+  .attribution {
+    font-size: 1rem;
+  }
+
+  .card > h1 {
+    font-size: 1.75rem;
+  }
+
+  .card > p {
+    font-size: 1rem;
+  }
+
+  .plan-content > h2 {
+    font-size: 1rem;
+  }
+
+  .plan-content > p {
+    font-size: 1rem;
+  }
+
+  .plan-card > button {
+    font-size: 0.875rem;
+  }
+}
